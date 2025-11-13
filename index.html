@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transformasi Geometri - Media Belajar Interaktif</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .canvas-grid {
+        background-image: linear-gradient(
+            to right,
+            #e5e7eb 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 py-4">
+        <h1 class="text-2xl font-bold text-gray-800">Transformasi Geometri</h1>
+        <p class="text-sm text-gray-600">Media Belajar Interaktif</p>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b sticky top-16 z-40">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex space-x-8">
+          <button
+            onclick="showSection('materi')"
+            class="nav-btn py-4 px-2 border-b-2 border-blue-500 text-blue-600 font-medium"
+          >
+            Materi
+          </button>
+          <button
+            onclick="showSection('contoh')"
+            class="nav-btn py-4 px-2 border-b-2 border-transparent text-gray-600 hover:text-gray-800"
+          >
+            Contoh Soal
+          </button>
+          <button
+            onclick="showSection('kalkulator')"
+            class="nav-btn py-4 px-2 border-b-2 border-transparent text-gray-600 hover:text-gray-800"
+          >
+            Kalkulator
+          </button>
+          <button
+            onclick="showSection('visualisasi')"
+            class="nav-btn py-4 px-2 border-b-2 border-transparent text-gray-600 hover:text-gray-800"
+          >
+            Visualisasi
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-8 mb-20">
+      <!-- Materi Section -->
+      <section id="materi" class="content-section">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">
+            Pengertian Transformasi Geometri
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Transformasi geometri adalah perubahan posisi, bentuk, atau ukuran
+            suatu bangun geometri pada bidang koordinat. Ada empat jenis
+            transformasi utama:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Translasi -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-blue-600 mb-3">
+              1. Translasi (Pergeseran)
+            </h3>
+            <p class="text-gray-700 mb-3">
+              Perpindahan titik atau bangun dengan jarak dan arah tertentu.
+            </p>
+            <div class="bg-gray-50 p-4 rounded">
+              <p class="font-mono text-sm mb-2">
+                Rumus: (x, y) → (x + a, y + b)
+              </p>
+              <p class="text-sm text-gray-600">
+                Dimana (a, b) adalah vektor translasi
+              </p>
+            </div>
+            <div class="mt-3 text-sm text-gray-700">
+              <p class="font-semibold">Contoh:</p>
+              <p>Titik A(2, 3) ditranslasi oleh T(4, -1)</p>
+              <p>A' = (2+4, 3-1) = (6, 2)</p>
+            </div>
+          </div>
+
+          <!-- Refleksi -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-green-600 mb-3">
+              2. Refleksi (Pencerminan)
+            </h3>
+            <p class="text-gray-700 mb-3">
+              Pencerminan titik atau bangun terhadap suatu garis.
+            </p>
+            <div class="bg-gray-50 p-4 rounded space-y-2 text-sm">
+              <p class="font-mono">Terhadap sumbu X: (x, y) → (x, -y)</p>
+              <p class="font-mono">Terhadap sumbu Y: (x, y) → (-x, y)</p>
+              <p class="font-mono">Terhadap y = x: (x, y) → (y, x)</p>
+              <p class="font-mono">Terhadap y = -x: (x, y) → (-y, -x)</p>
+            </div>
+          </div>
+
+          <!-- Rotasi -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-purple-600 mb-3">
+              3. Rotasi (Perputaran)
+            </h3>
+            <p class="text-gray-700 mb-3">
+              Perputaran titik atau bangun terhadap titik pusat dengan sudut
+              tertentu.
+            </p>
+            <div class="bg-gray-50 p-4 rounded text-sm">
+              <p class="font-semibold mb-2">Rotasi terhadap O(0,0):</p>
+              <p class="font-mono">90°: (x, y) → (-y, x)</p>
+              <p class="font-mono">180°: (x, y) → (-x, -y)</p>
+              <p class="font-mono">270°: (x, y) → (y, -x)</p>
+            </div>
+          </div>
+
+          <!-- Dilatasi -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-red-600 mb-3">
+              4. Dilatasi (Perkalian)
+            </h3>
+            <p class="text-gray-700 mb-3">
+              Perubahan ukuran bangun dengan faktor skala tertentu.
+            </p>
+            <div class="bg-gray-50 p-4 rounded">
+              <p class="font-mono text-sm mb-2">Rumus: (x, y) → (k·x, k·y)</p>
+              <p class="text-sm text-gray-600">k > 1: pembesaran</p>
+              <p class="text-sm text-gray-600">0 < k < 1: pengecilan</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contoh Soal Section -->
+      <section id="contoh" class="content-section hidden">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">
+            Contoh Soal Kompleks
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          <!-- Soal 1 -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-start mb-4">
+              <span
+                class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3"
+                >1</span
+              >
+              <div class="flex-1">
+                <p class="text-gray-800 font-semibold mb-2">
+                  Komposisi Transformasi
+                </p>
+                <p class="text-gray-700">
+                  Titik A(3, 2) ditranslasi oleh T(2, -1), kemudian
+                  direfleksikan terhadap sumbu X. Tentukan koordinat akhir titik
+                  A!
+                </p>
+              </div>
+            </div>
+            <button
+              onclick="toggleSolution(1)"
+              class="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Lihat Pembahasan →
+            </button>
+            <div id="solution-1" class="hidden mt-4 p-4 bg-blue-50 rounded">
+              <p class="font-semibold mb-2">Pembahasan:</p>
+              <p class="mb-2">Langkah 1: Translasi T(2, -1)</p>
+              <p class="font-mono text-sm mb-2">
+                A(3, 2) → A'(3+2, 2-1) = A'(5, 1)
+              </p>
+              <p class="mb-2">Langkah 2: Refleksi terhadap sumbu X</p>
+              <p class="font-mono text-sm mb-2">A'(5, 1) → A''(5, -1)</p>
+              <p class="font-semibold text-green-600">Jawaban: A''(5, -1)</p>
+            </div>
+          </div>
+
+          <!-- Soal 2 -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-start mb-4">
+              <span
+                class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3"
+                >2</span
+              >
+              <div class="flex-1">
+                <p class="text-gray-800 font-semibold mb-2">
+                  Rotasi dan Dilatasi
+                </p>
+                <p class="text-gray-700">
+                  Segitiga ABC dengan A(2, 0), B(4, 0), C(3, 2) dirotasi 90°
+                  berlawanan arah jarum jam terhadap O(0,0), kemudian didilatasi
+                  dengan faktor skala 2. Tentukan koordinat A', B', C'!
+                </p>
+              </div>
+            </div>
+            <button
+              onclick="toggleSolution(2)"
+              class="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Lihat Pembahasan →
+            </button>
+            <div id="solution-2" class="hidden mt-4 p-4 bg-blue-50 rounded">
+              <p class="font-semibold mb-2">Pembahasan:</p>
+              <p class="mb-2">Langkah 1: Rotasi 90° (x, y) → (-y, x)</p>
+              <p class="font-mono text-sm">A(2, 0) → A₁(0, 2)</p>
+              <p class="font-mono text-sm">B(4, 0) → B₁(0, 4)</p>
+              <p class="font-mono text-sm mb-2">C(3, 2) → C₁(-2, 3)</p>
+              <p class="mb-2">Langkah 2: Dilatasi k=2 (x, y) → (2x, 2y)</p>
+              <p class="font-mono text-sm">A₁(0, 2) → A'(0, 4)</p>
+              <p class="font-mono text-sm">B₁(0, 4) → B'(0, 8)</p>
+              <p class="font-mono text-sm">C₁(-2, 3) → C'(-4, 6)</p>
+              <p class="font-semibold text-green-600 mt-2">
+                Jawaban: A'(0, 4), B'(0, 8), C'(-4, 6)
+              </p>
+            </div>
+          </div>
+
+          <!-- Soal 3 -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-start mb-4">
+              <span
+                class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3"
+                >3</span
+              >
+              <div class="flex-1">
+                <p class="text-gray-800 font-semibold mb-2">
+                  Transformasi Garis
+                </p>
+                <p class="text-gray-700">
+                  Garis y = 2x + 1 direfleksikan terhadap sumbu Y, kemudian
+                  ditranslasi oleh T(3, -2). Tentukan persamaan garis hasil
+                  transformasi!
+                </p>
+              </div>
+            </div>
+            <button
+              onclick="toggleSolution(3)"
+              class="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Lihat Pembahasan →
+            </button>
+            <div id="solution-3" class="hidden mt-4 p-4 bg-blue-50 rounded">
+              <p class="font-semibold mb-2">Pembahasan:</p>
+              <p class="mb-2">
+                Langkah 1: Refleksi terhadap sumbu Y: (x, y) → (-x, y)
+              </p>
+              <p class="font-mono text-sm mb-2">
+                y = 2x + 1 → y = 2(-x) + 1 → y = -2x + 1
+              </p>
+              <p class="mb-2">
+                Langkah 2: Translasi T(3, -2): (x, y) → (x-3, y+2)
+              </p>
+              <p class="font-mono text-sm mb-2">y + 2 = -2(x - 3) + 1</p>
+              <p class="font-mono text-sm mb-2">y + 2 = -2x + 6 + 1</p>
+              <p class="font-mono text-sm">y = -2x + 5</p>
+              <p class="font-semibold text-green-600 mt-2">
+                Jawaban: y = -2x + 5
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kalkulator Section -->
+      <section id="kalkulator" class="content-section hidden">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">
+            Kalkulator Transformasi
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Input -->
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Pilih Jenis Transformasi</label
+              >
+              <select
+                id="transformType"
+                onchange="updateCalculatorInputs()"
+                class="w-full p-2 border border-gray-300 rounded mb-4"
+              >
+                <option value="translasi">Translasi</option>
+                <option value="refleksi">Refleksi</option>
+                <option value="rotasi">Rotasi</option>
+                <option value="dilatasi">Dilatasi</option>
+              </select>
+
+              <label class="block text-sm font-semibold text-gray-700 mb-2"
+                >Koordinat Titik Awal</label
+              >
+              <div class="flex gap-2 mb-4">
+                <input
+                  type="number"
+                  id="pointX"
+                  placeholder="x"
+                  class="flex-1 p-2 border border-gray-300 rounded"
+                />
+                <input
+                  type="number"
+                  id="pointY"
+                  placeholder="y"
+                  class="flex-1 p-2 border border-gray-300 rounded"
+                />
+              </div>
+
+              <div id="translasiInputs" class="transform-inputs">
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Vektor Translasi</label
+                >
+                <div class="flex gap-2 mb-4">
+                  <input
+                    type="number"
+                    id="transA"
+                    placeholder="a"
+                    class="flex-1 p-2 border border-gray-300 rounded"
+                  />
+                  <input
+                    type="number"
+                    id="transB"
+                    placeholder="b"
+                    class="flex-1 p-2 border border-gray-300 rounded"
+                  />
+                </div>
+              </div>
+
+              <div id="refleksiInputs" class="transform-inputs hidden">
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Sumbu Refleksi</label
+                >
+                <select
+                  id="refleksiAxis"
+                  class="w-full p-2 border border-gray-300 rounded mb-4"
+                >
+                  <option value="x">Sumbu X</option>
+                  <option value="y">Sumbu Y</option>
+                  <option value="y=x">Garis y = x</option>
+                  <option value="y=-x">Garis y = -x</option>
+                </select>
+              </div>
+
+              <div id="rotasiInputs" class="transform-inputs hidden">
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Sudut Rotasi</label
+                >
+                <select
+                  id="rotasiAngle"
+                  class="w-full p-2 border border-gray-300 rounded mb-4"
+                >
+                  <option value="90">90°</option>
+                  <option value="180">180°</option>
+                  <option value="270">270°</option>
+                </select>
+              </div>
+
+              <div id="dilatasiInputs" class="transform-inputs hidden">
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Faktor Skala (k)</label
+                >
+                <input
+                  type="number"
+                  id="dilatasiK"
+                  placeholder="k"
+                  step="0.1"
+                  class="w-full p-2 border border-gray-300 rounded mb-4"
+                />
+              </div>
+
+              <button
+                onclick="calculateTransformation()"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+              >
+                Hitung Transformasi
+              </button>
+            </div>
+
+            <!-- Output -->
+            <div>
+              <div class="bg-gray-50 rounded-lg p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">
+                  Hasil Transformasi
+                </h3>
+                <div id="calculatorResult" class="text-gray-600">
+                  Masukkan koordinat dan parameter transformasi, lalu klik
+                  "Hitung Transformasi"
+                </div>
+              </div>
+
+              <div
+                id="calculatorSteps"
+                class="mt-4 bg-blue-50 rounded-lg p-6 hidden"
+              >
+                <h3 class="text-lg font-bold text-blue-800 mb-4">
+                  Langkah Perhitungan
+                </h3>
+                <div
+                  id="stepsContent"
+                  class="text-sm text-gray-700 space-y-2"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visualisasi Section -->
+      <section id="visualisasi" class="content-section hidden">
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">
+            Visualisasi Interaktif
+          </h2>
+
+          <div class="grid lg:grid-cols-3 gap-6">
+            <!-- Controls -->
+            <div class="lg:col-span-1 space-y-4">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Mode</label
+                >
+                <select
+                  id="drawMode"
+                  onchange="changeDrawMode()"
+                  class="w-full p-2 border border-gray-300 rounded"
+                >
+                  <option value="point">Titik</option>
+                  <option value="line">Garis</option>
+                  <option value="triangle">Segitiga</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Warna Bentuk Awal</label
+                >
+                <input
+                  type="color"
+                  id="originalColor"
+                  value="#3b82f6"
+                  class="w-full h-10 border border-gray-300 rounded"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2"
+                  >Transformasi</label
+                >
+                <select
+                  id="visTransformType"
+                  class="w-full p-2 border border-gray-300 rounded mb-2"
+                >
+                  <option value="translasi">Translasi</option>
+                  <option value="refleksi">Refleksi</option>
+                  <option value="rotasi">Rotasi</option>
+                  <option value="dilatasi">Dilatasi</option>
+                </select>
+              </div>
+
+              <div id="visTransParams"></div>
+
+              <button
+                onclick="applyVisualization()"
+                class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
+              >
+                Terapkan Transformasi
+              </button>
+
+              <button
+                onclick="clearCanvas()"
+                class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded"
+              >
+                Hapus Semua
+              </button>
+
+              <div class="text-sm text-gray-600 bg-gray-50 p-3 rounded">
+                <p class="font-semibold mb-1">Petunjuk:</p>
+                <p>
+                  Klik pada canvas untuk menambahkan titik atau bentuk sesuai
+                  mode yang dipilih.
+                </p>
+              </div>
+            </div>
+
+            <!-- Canvas -->
+            <div class="lg:col-span-2">
+              <div class="border-2 border-gray-300 rounded-lg overflow-hidden">
+                <canvas
+                  id="canvas"
+                  width="600"
+                  height="600"
+                  class="canvas-grid cursor-crosshair"
+                ></canvas>
+              </div>
+              <div id="canvasInfo" class="mt-2 text-sm text-gray-600"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-sm">© 2025 By Gibrant & Kharisma</p>
+      </div>
+    </footer>
+
+    <script>
+      // Navigation
+      function showSection(sectionId) {
+        document.querySelectorAll(".content-section").forEach((section) => {
+          section.classList.add("hidden");
+        });
+        document.getElementById(sectionId).classList.remove("hidden");
+
+        document.querySelectorAll(".nav-btn").forEach((btn) => {
+          btn.classList.remove("border-blue-500", "text-blue-600");
+          btn.classList.add("border-transparent", "text-gray-600");
+        });
+        event.target.classList.remove("border-transparent", "text-gray-600");
+        event.target.classList.add("border-blue-500", "text-blue-600");
+      }
+
+      // Toggle Solution
+      function toggleSolution(num) {
+        const solution = document.getElementById(`solution-${num}`);
+        solution.classList.toggle("hidden");
+      }
+
+      // Calculator Functions
+      function updateCalculatorInputs() {
+        const type = document.getElementById("transformType").value;
+        document.querySelectorAll(".transform-inputs").forEach((input) => {
+          input.classList.add("hidden");
+        });
+        document.getElementById(`${type}Inputs`).classList.remove("hidden");
+      }
+
+      function calculateTransformation() {
+        const x = parseFloat(document.getElementById("pointX").value);
+        const y = parseFloat(document.getElementById("pointY").value);
+        const type = document.getElementById("transformType").value;
+
+        if (isNaN(x) || isNaN(y)) {
+          alert("Masukkan koordinat yang valid!");
+          return;
+        }
+
+        let result, steps;
+
+        switch (type) {
+          case "translasi":
+            const a = parseFloat(document.getElementById("transA").value);
+            const b = parseFloat(document.getElementById("transB").value);
+            if (isNaN(a) || isNaN(b)) {
+              alert("Masukkan vektor translasi yang valid!");
+              return;
+            }
+            result = { x: x + a, y: y + b };
+            steps = [
+              `Titik awal: (${x}, ${y})`,
+              `Vektor translasi: T(${a}, ${b})`,
+              `Rumus: (x', y') = (x + a, y + b)`,
+              `x' = ${x} + ${a} = ${result.x}`,
+              `y' = ${y} + ${b} = ${result.y}`,
+            ];
+            break;
+
+          case "refleksi":
+            const axis = document.getElementById("refleksiAxis").value;
+            switch (axis) {
+              case "x":
+                result = { x: x, y: -y };
+                steps = [
+                  `Titik awal: (${x}, ${y})`,
+                  `Refleksi terhadap sumbu X`,
+                  `Rumus: (x', y') = (x, -y)`,
+                  `Hasil: (${result.x}, ${result.y})`,
+                ];
+                break;
+              case "y":
+                result = { x: -x, y: y };
+                steps = [
+                  `Titik awal: (${x}, ${y})`,
+                  `Refleksi terhadap sumbu Y`,
+                  `Rumus: (x', y') = (-x, y)`,
+                  `Hasil: (${result.x}, ${result.y})`,
+                ];
+                break;
+              case "y=x":
+                result = { x: y, y: x };
+                steps = [
+                  `Titik awal: (${x}, ${y})`,
+                  `Refleksi terhadap garis y = x`,
+                  `Rumus: (x', y') = (y, x)`,
+                  `Hasil: (${result.x}, ${result.y})`,
+                ];
+                break;
+              case "y=-x":
+                result = { x: -y, y: -x };
+                steps = [
+                  `Titik awal: (${x}, ${y})`,
+                  `Refleksi terhadap garis y = -x`,
+                  `Rumus: (x', y') = (-y, -x)`,
+                  `Hasil: (${result.x}, ${result.y})`,
+                ];
+                break;
+            }
+            break;
+
+          case "rotasi":
+            const angle = parseInt(
+              document.getElementById("rotasiAngle").value
+            );
+            switch (angle) {
+              case 90:
+                result = { x: -y, y: x };
+                steps = [
+                  `Titik awal: (${x}, ${y})`,
+                  `Rotasi 90° berlawanan arah jarum jam`,
+                  `Rumus: (x', y') = (-y, x)`,
+                  `Hasil: (${result.x}, ${result.y})`,
+                ];
+                break;
+              case 180:
+                result = { x: -x, y: -y };
+                steps = [
+                  `Titik awal: (${x}, ${y})`,
+                  `Rotasi 180°`,
+                  `Rumus: (x', y') = (-x, -y)`,
+                  `Hasil: (${result.x}, ${result.y})`,
+                ];
+                break;
+              case 270:
+                result = { x: y, y: -x };
+                steps = [
+                  `Titik awal: (${x}, ${y})`,
+                  `Rotasi 270° berlawanan arah jarum jam`,
+                  `Rumus: (x', y') = (y, -x)`,
+                  `Hasil: (${result.x}, ${result.y})`,
+                ];
+                break;
+            }
+            break;
+
+          case "dilatasi":
+            const k = parseFloat(document.getElementById("dilatasiK").value);
+            if (isNaN(k)) {
+              alert("Masukkan faktor skala yang valid!");
+              return;
+            }
+            result = { x: k * x, y: k * y };
+            steps = [
+              `Titik awal: (${x}, ${y})`,
+              `Faktor skala: k = ${k}`,
+              `Rumus: (x', y') = (k·x, k·y)`,
+              `x' = ${k} × ${x} = ${result.x}`,
+              `y' = ${k} × ${y} = ${result.y}`,
+            ];
+            break;
+        }
+
+        document.getElementById("calculatorResult").innerHTML = `
+                <div class="text-2xl font-bold text-green-600 mb-2">
+                    (${result.x}, ${result.y})
+                </div>
+                <p class="text-sm text-gray-600">Koordinat hasil transformasi</p>
+            `;
+
+        document.getElementById("stepsContent").innerHTML = steps
+          .map((step) => `<p>${step}</p>`)
+          .join("");
+        document.getElementById("calculatorSteps").classList.remove("hidden");
+      }
+
+      // Canvas Visualization
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      let points = [];
+      let transformedPoints = [];
+      let currentMode = "point";
+
+      function initCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawGrid();
+        drawAxes();
+      }
+
+      function drawGrid() {
+        ctx.strokeStyle = "#e5e7eb";
+        ctx.lineWidth = 1;
+
+        for (let i = 0; i <= canvas.width; i += 20) {
+          ctx.beginPath();
+          ctx.moveTo(i, 0);
+          ctx.lineTo(i, canvas.height);
+          ctx.stroke();
+        }
+
+        for (let i = 0; i <= canvas.height; i += 20) {
+          ctx.beginPath();
+          ctx.moveTo(0, i);
+          ctx.lineTo(canvas.width, i);
+          ctx.stroke();
+        }
+      }
+
+      function drawAxes() {
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        ctx.strokeStyle = "#000";
+        ctx.lineWidth = 2;
+
+        // X axis
+        ctx.beginPath();
+        ctx.moveTo(0, centerY);
+        ctx.lineTo(canvas.width, centerY);
+        ctx.stroke();
+
+        // Y axis
+        ctx.beginPath();
+        ctx.moveTo(centerX, 0);
+        ctx.lineTo(centerX, canvas.height);
+        ctx.stroke();
+
+        // Labels
+        ctx.fillStyle = "#000";
+        ctx.font = "12px sans-serif";
+        ctx.fillText("X", canvas.width - 20, centerY - 10);
+        ctx.fillText("Y", centerX + 10, 15);
+        ctx.fillText("O", centerX + 5, centerY - 5);
+      }
+
+      function canvasToCartesian(canvasX, canvasY) {
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const scale = 20;
+
+        return {
+          x: Math.round((canvasX - centerX) / scale),
+          y: Math.round((centerY - canvasY) / scale),
+        };
+      }
+
+      function cartesianToCanvas(x, y) {
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const scale = 20;
+
+        return {
+          x: centerX + x * scale,
+          y: centerY - y * scale,
+        };
+      }
+
+      function drawPoint(x, y, color = "#3b82f6", label = "") {
+        const pos = cartesianToCanvas(x, y);
+
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(pos.x, pos.y, 5, 0, 2 * Math.PI);
+        ctx.fill();
+
+        if (label) {
+          ctx.fillStyle = "#000";
+          ctx.font = "12px sans-serif";
+          ctx.fillText(label, pos.x + 8, pos.y - 8);
+        }
+      }
+
+      function drawLine(x1, y1, x2, y2, color = "#3b82f6") {
+        const pos1 = cartesianToCanvas(x1, y1);
+        const pos2 = cartesianToCanvas(x2, y2);
+
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(pos1.x, pos1.y);
+        ctx.lineTo(pos2.x, pos2.y);
+        ctx.stroke();
+      }
+
+      function drawTriangle(pts, color = "#3b82f6") {
+        if (pts.length < 3) return;
+
+        const pos1 = cartesianToCanvas(pts[0].x, pts[0].y);
+        const pos2 = cartesianToCanvas(pts[1].x, pts[1].y);
+        const pos3 = cartesianToCanvas(pts[2].x, pts[2].y);
+
+        ctx.fillStyle = color + "40";
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+
+        ctx.beginPath();
+        ctx.moveTo(pos1.x, pos1.y);
+        ctx.lineTo(pos2.x, pos2.y);
+        ctx.lineTo(pos3.x, pos3.y);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+      }
+
+      function changeDrawMode() {
+        currentMode = document.getElementById("drawMode").value;
+        points = [];
+        transformedPoints = [];
+        initCanvas();
+        updateVisTransformParams();
+      }
+
+      function updateVisTransformParams() {
+        const type = document.getElementById("visTransformType").value;
+        let html = "";
+
+        switch (type) {
+          case "translasi":
+            html = `
+                        <div class="flex gap-2">
+                            <input type="number" id="visTransA" placeholder="a" value="2" class="flex-1 p-2 border border-gray-300 rounded">
+                            <input type="number" id="visTransB" placeholder="b" value="2" class="flex-1 p-2 border border-gray-300 rounded">
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Vektor T(a, b)</p>
+                    `;
+            break;
+          case "refleksi":
+            html = `
+                        <select id="visRefleksiAxis" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="x">Sumbu X</option>
+                            <option value="y">Sumbu Y</option>
+                            <option value="y=x">Garis y = x</option>
+                            <option value="y=-x">Garis y = -x</option>
+                        </select>
+                    `;
+            break;
+          case "rotasi":
+            html = `
+                        <select id="visRotasiAngle" class="w-full p-2 border border-gray-300 rounded">
+                            <option value="90">90°</option>
+                            <option value="180">180°</option>
+                            <option value="270">270°</option>
+                        </select>
+                    `;
+            break;
+          case "dilatasi":
+            html = `
+                        <input type="number" id="visDilatasiK" placeholder="k" value="2" step="0.1" class="w-full p-2 border border-gray-300 rounded">
+                        <p class="text-xs text-gray-500 mt-1">Faktor skala k</p>
+                    `;
+            break;
+        }
+
+        document.getElementById("visTransParams").innerHTML = html;
+      }
+
+      canvas.addEventListener("click", function (e) {
+        const rect = canvas.getBoundingClientRect();
+        const canvasX = e.clientX - rect.left;
+        const canvasY = e.clientY - rect.top;
+        const cartesian = canvasToCartesian(canvasX, canvasY);
+
+        points.push(cartesian);
+
+        initCanvas();
+
+        const color = document.getElementById("originalColor").value;
+
+        if (currentMode === "point") {
+          points.forEach((p, i) => {
+            drawPoint(p.x, p.y, color, `(${p.x},${p.y})`);
+          });
+        } else if (currentMode === "line") {
+          points.forEach((p, i) => {
+            drawPoint(p.x, p.y, color, `P${i + 1}`);
+          });
+          if (points.length >= 2) {
+            for (let i = 0; i < points.length - 1; i++) {
+              drawLine(
+                points[i].x,
+                points[i].y,
+                points[i + 1].x,
+                points[i + 1].y,
+                color
+              );
+            }
+          }
+        } else if (currentMode === "triangle") {
+          points.forEach((p, i) => {
+            drawPoint(p.x, p.y, color, `${String.fromCharCode(65 + i)}`);
+          });
+          if (points.length === 3) {
+            drawTriangle(points, color);
+          }
+          if (points.length > 3) {
+            points = points.slice(-3);
+          }
+        }
+
+        // Redraw transformed points if they exist
+        if (transformedPoints.length > 0) {
+          drawTransformed();
+        }
+
+        updateCanvasInfo();
+      });
+
+      function applyVisualization() {
+        if (points.length === 0) {
+          alert("Tambahkan titik atau bentuk terlebih dahulu!");
+          return;
+        }
+
+        const type = document.getElementById("visTransformType").value;
+        transformedPoints = [];
+
+        points.forEach((point) => {
+          let transformed;
+
+          switch (type) {
+            case "translasi":
+              const a =
+                parseFloat(document.getElementById("visTransA").value) || 0;
+              const b =
+                parseFloat(document.getElementById("visTransB").value) || 0;
+              transformed = { x: point.x + a, y: point.y + b };
+              break;
+
+            case "refleksi":
+              const axis = document.getElementById("visRefleksiAxis").value;
+              switch (axis) {
+                case "x":
+                  transformed = { x: point.x, y: -point.y };
+                  break;
+                case "y":
+                  transformed = { x: -point.x, y: point.y };
+                  break;
+                case "y=x":
+                  transformed = { x: point.y, y: point.x };
+                  break;
+                case "y=-x":
+                  transformed = { x: -point.y, y: -point.x };
+                  break;
+              }
+              break;
+
+            case "rotasi":
+              const angle = parseInt(
+                document.getElementById("visRotasiAngle").value
+              );
+              switch (angle) {
+                case 90:
+                  transformed = { x: -point.y, y: point.x };
+                  break;
+                case 180:
+                  transformed = { x: -point.x, y: -point.y };
+                  break;
+                case 270:
+                  transformed = { x: point.y, y: -point.x };
+                  break;
+              }
+              break;
+
+            case "dilatasi":
+              const k =
+                parseFloat(document.getElementById("visDilatasiK").value) || 1;
+              transformed = { x: k * point.x, y: k * point.y };
+              break;
+          }
+
+          transformedPoints.push(transformed);
+        });
+
+        initCanvas();
+
+        const origColor = document.getElementById("originalColor").value;
+        const transColor = "#ef4444"; // red for transformed
+
+        // Draw original
+        if (currentMode === "point") {
+          points.forEach((p) =>
+            drawPoint(p.x, p.y, origColor, `(${p.x},${p.y})`)
+          );
+        } else if (currentMode === "line") {
+          points.forEach((p) => drawPoint(p.x, p.y, origColor));
+          if (points.length >= 2) {
+            for (let i = 0; i < points.length - 1; i++) {
+              drawLine(
+                points[i].x,
+                points[i].y,
+                points[i + 1].x,
+                points[i + 1].y,
+                origColor
+              );
+            }
+          }
+        } else if (currentMode === "triangle") {
+          points.forEach((p) => drawPoint(p.x, p.y, origColor));
+          if (points.length === 3) drawTriangle(points, origColor);
+        }
+
+        drawTransformed();
+        updateCanvasInfo();
+      }
+
+      function drawTransformed() {
+        const transColor = "#ef4444";
+
+        if (currentMode === "point") {
+          transformedPoints.forEach((p) =>
+            drawPoint(p.x, p.y, transColor, `(${p.x},${p.y})`)
+          );
+        } else if (currentMode === "line") {
+          transformedPoints.forEach((p) => drawPoint(p.x, p.y, transColor));
+          if (transformedPoints.length >= 2) {
+            for (let i = 0; i < transformedPoints.length - 1; i++) {
+              drawLine(
+                transformedPoints[i].x,
+                transformedPoints[i].y,
+                transformedPoints[i + 1].x,
+                transformedPoints[i + 1].y,
+                transColor
+              );
+            }
+          }
+        } else if (currentMode === "triangle") {
+          transformedPoints.forEach((p) => drawPoint(p.x, p.y, transColor));
+          if (transformedPoints.length === 3)
+            drawTriangle(transformedPoints, transColor);
+        }
+      }
+
+      function updateCanvasInfo() {
+        let info = `<span class="font-semibold">Titik yang ditambahkan:</span> `;
+        info += points.map((p) => `(${p.x}, ${p.y})`).join(", ");
+
+        if (transformedPoints.length > 0) {
+          info += ` | <span class="font-semibold text-red-600">Hasil transformasi:</span> `;
+          info += transformedPoints.map((p) => `(${p.x}, ${p.y})`).join(", ");
+        }
+
+        document.getElementById("canvasInfo").innerHTML =
+          info || "Klik pada canvas untuk menambahkan titik";
+      }
+
+      function clearCanvas() {
+        points = [];
+        transformedPoints = [];
+        initCanvas();
+        updateCanvasInfo();
+      }
+
+      // Initialize
+      initCanvas();
+      updateVisTransformParams();
+
+      document
+        .getElementById("visTransformType")
+        .addEventListener("change", updateVisTransformParams);
+    </script>
+  </body>
+</html>
